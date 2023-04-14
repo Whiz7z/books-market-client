@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 const productsApi = createApi({
   reducerPath: "productsApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: process.env.BACKEND_URL,
+    baseUrl: "https://books-market-server.onrender.com/api",
     prepareHeaders: (headers, { getState }) => {
       const states = getState();
       if (states.user.userInfo && states.user.userInfo.token) {

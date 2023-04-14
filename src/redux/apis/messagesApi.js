@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 const messagesApi = createApi({
   reducerPath: "messagesApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: process.env.BACKEND_URL,
+    baseUrl: "https://books-market-server.onrender.com/api",
     prepareHeaders: (headers, { getState }) => {
       const states = getState();
       if (states.user.userInfo.token) {

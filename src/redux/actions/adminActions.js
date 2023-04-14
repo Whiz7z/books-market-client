@@ -10,7 +10,7 @@ export const updateProduct = (product, token) => async (dispatch) => {
       },
     };
     const response = await axios.put(
-      `${process.env.BACKEND_URL}/products/`,
+      `https://books-market-server.onrender.com/api/products/`,
       { product },
       config
     );
@@ -33,7 +33,9 @@ export const getAllTags = async (token) => {
     //   },
     // };
 
-    const response = await axios.get(`${process.env.BACKEND_URL}tags/`);
+    const response = await axios.get(
+      `https://books-market-server.onrender.com/api/tags/`
+    );
     //console.log(response.data);
     if (response.status > 400) {
       console.log(response);

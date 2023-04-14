@@ -13,7 +13,7 @@ export const login =
         },
       };
       const response = await axios.post(
-        `${process.env.BACKEND_URL}/users/login`,
+        `https://books-market-server.onrender.com/api/users/login`,
         { email, password },
         config
       );
@@ -48,7 +48,7 @@ export const register =
       };
 
       const { data } = await axios.post(
-        `${process.env.BACKEND_URL}/users/register`,
+        `https://books-market-server.onrender.com/api/users/register`,
         { name, email, password },
         config
       );
@@ -80,7 +80,7 @@ export const changeInfo =
       };
 
       const { data } = await axios.put(
-        `${process.env.BACKEND_URL}/users/changeinfo`,
+        `https://books-market-server.onrender.com/api/users/changeinfo`,
         { name, surname, email },
         config
       );
@@ -113,7 +113,7 @@ export const changePassword =
       };
 
       const { data } = await axios.put(
-        `${process.env.BACKEND_URL}/users/changepassword`,
+        `https://books-market-server.onrender.com/api/users/changepassword`,
         { currentPassword, newPassword },
         config
       );
@@ -136,7 +136,7 @@ export const changePassword =
 export const sendMessage = async ({ email, message }) => {
   try {
     const { data } = await axios.post(
-      `${process.env.BACKEND_URL}/users/sendContactMessage`,
+      `https://books-market-server.onrender.com/api/users/sendContactMessage`,
       {
         email,
         message,

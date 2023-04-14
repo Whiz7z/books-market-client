@@ -22,7 +22,7 @@ const CartListItem = ({ product }) => {
         <div className="cart_item-description">
           <img
             className="cart_item_img"
-            src={`${process.env.BACKEND_URL}/images/${product.item.imagePath}`}
+            src={`https://books-market-server.onrender.com/api/images/${product.item.imagePath}`}
             alt="product"
           />
           <div className="cart_item-info">
