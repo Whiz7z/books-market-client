@@ -34,7 +34,7 @@ const ProductPage = () => {
         <div className="product-content">
           <div className="product_image-block">
             <img
-              src={`http://localhost:5000/images/${product.imagePath}`}
+              src={`${process.env.BACKEND_URL}/images/${product.imagePath}`}
               className="product_image"
               alt="product"
             />

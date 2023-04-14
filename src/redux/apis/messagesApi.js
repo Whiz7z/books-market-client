@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 const messagesApi = createApi({
   reducerPath: "messagesApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:5000",
+    baseUrl: `${process.env.BACKEND_URL}`,
     prepareHeaders: (headers, { getState }) => {
       const states = getState();
       if (states.user.userInfo.token) {

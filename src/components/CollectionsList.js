@@ -28,7 +28,7 @@ const CollectionsList = () => {
             >
               <div className="categories_item_image-container">
                 <img
-                  src={`http://localhost:5000/images/${el.imagePath}`}
+                  src={`${process.env.BACKEND_URL}/images/${el.imagePath}`}
                   alt={"preview"}
                   className="product_item-image"
                 />
