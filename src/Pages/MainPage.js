@@ -16,7 +16,7 @@ const MainPage = () => {
             alt="product"
             className="main-page-banner-img"
           />
-          <h1 className="main-page-title-product">Product of the week</h1>
+          <h1 className="main-page-title-product">Product of the weekk</h1>
           <Link
             to={`/products/${data._id}`}
             className="main-page_banner-link-product"
