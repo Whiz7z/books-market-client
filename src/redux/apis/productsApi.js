@@ -74,7 +74,7 @@ const productsApi = createApi({
       getAllTags: builder.query({
         query: () => {
           return {
-            url: "/api/tags",
+            url: "api/tags",
             method: "GET",
           };
         },
