@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 const messagesApi = createApi({
   reducerPath: "messagesApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: `${process.env.BACKEND_URL}`,
+    baseUrl: process.env.BACKEND_URL,
     prepareHeaders: (headers, { getState }) => {
       const states = getState();
       if (states.user.userInfo.token) {
@@ -19,7 +19,7 @@ const messagesApi = createApi({
         },
         query: () => {
           return {
-            url: "/api/messages",
+            url: "messages",
             method: "GET",
           };
         },
@@ -30,7 +30,7 @@ const messagesApi = createApi({
         },
         query: (payload) => {
           return {
-            url: "/api/messages/",
+            url: "/messages/",
             method: "PUT",
             body: {
               payload,

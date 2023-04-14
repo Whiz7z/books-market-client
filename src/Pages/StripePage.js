@@ -17,9 +17,12 @@ const StripePage = () => {
 
   useEffect(() => {
     const createPayment = async () => {
-      const response = await axios.post("/api/payment/create-payment-intent", {
-        items,
-      });
+      const response = await axios.post(
+        `${process.env.BACKEND_URL}/payment/create-payment-intent`,
+        {
+          items,
+        }
+      );
       console.log(response.data.totalPrice);
       setTotalPrice(response.data.totalPrice);
       setClientSecret(response.data.clientSecret);

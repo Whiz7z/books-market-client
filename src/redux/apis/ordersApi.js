@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 const ordersApi = createApi({
   reducerPath: "ordersApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: `${process.env.BACKEND_URL}`,
+    baseUrl: process.env.BACKEND_URL,
     prepareHeaders: (headers, { getState }) => {
       const states = getState();
       if (states.user.userInfo.token) {
@@ -20,7 +20,7 @@ const ordersApi = createApi({
         },
         query: () => {
           return {
-            url: "/api/orders",
+            url: "/orders",
             method: "GET",
           };
         },
@@ -31,7 +31,7 @@ const ordersApi = createApi({
         },
         query: () => {
           return {
-            url: "/api/orders/myorders",
+            url: "/orders/myorders",
             method: "GET",
           };
         },
@@ -42,7 +42,7 @@ const ordersApi = createApi({
         },
         query: (payload) => {
           return {
-            url: "/api/orders/",
+            url: "/orders/",
             method: "PUT",
             body: {
               payload,
@@ -56,7 +56,7 @@ const ordersApi = createApi({
         },
         query: (payload) => {
           return {
-            url: "/api/orders/cancel",
+            url: "/orders/cancel",
             method: "PUT",
             body: {
               payload,

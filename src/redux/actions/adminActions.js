@@ -9,7 +9,11 @@ export const updateProduct = (product, token) => async (dispatch) => {
         "Content-Type": "application/json",
       },
     };
-    const response = await axios.put("/api/products/", { product }, config);
+    const response = await axios.put(
+      `${process.env.BACKEND_URL}/products/`,
+      { product },
+      config
+    );
 
     if (response.status > 400) {
       console.log(response);
@@ -29,7 +33,7 @@ export const getAllTags = async (token) => {
     //   },
     // };
 
-    const response = await axios.get("/api/tags/");
+    const response = await axios.get(`${process.env.BACKEND_URL}tags/`);
     //console.log(response.data);
     if (response.status > 400) {
       console.log(response);

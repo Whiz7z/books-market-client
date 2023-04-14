@@ -13,7 +13,7 @@ export const createOrder =
         },
       };
       const response = await axios.post(
-        "/api/orders/createOrder",
+        `${process.env.BACKEND_URL}/orders/createOrder`,
         { buyer, items, address },
         config
       );

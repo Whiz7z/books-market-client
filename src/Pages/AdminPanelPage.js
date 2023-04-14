@@ -29,7 +29,10 @@ const AdminPanelPage = () => {
       },
     };
     const isAdminRequest = async () => {
-      const response = await axios.get("/api/users/admin", config);
+      const response = await axios.get(
+        `${process.env.BACKEND_URL}/users/admin`,
+        config
+      );
       setContent(response.data);
     };
 

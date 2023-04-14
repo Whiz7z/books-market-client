@@ -24,7 +24,7 @@ const productsApi = createApi({
         },
         query: (category) => {
           return {
-            url: "/api/products",
+            url: "/products",
             params: {
               category: category,
             },
@@ -35,7 +35,7 @@ const productsApi = createApi({
       getProductsByTags: builder.query({
         query: (tags) => {
           return {
-            url: "/api/products/byTags",
+            url: "/products/byTags",
             params: {
               tags: tags,
             },
@@ -46,7 +46,7 @@ const productsApi = createApi({
       getProductById: builder.query({
         query: (id) => {
           return {
-            url: "/api/products/byId",
+            url: "/products/byId",
             params: {
               id: id,
             },
@@ -57,7 +57,7 @@ const productsApi = createApi({
       getProductOfTheWeek: builder.query({
         query: () => {
           return {
-            url: "/api/products/ofTheWeek",
+            url: "/products/ofTheWeek",
 
             method: "GET",
           };
@@ -66,7 +66,7 @@ const productsApi = createApi({
       getCategoriesAndPreview: builder.query({
         query: () => {
           return {
-            url: "/api/products/categories",
+            url: "/products/categories",
             method: "GET",
           };
         },
@@ -74,7 +74,7 @@ const productsApi = createApi({
       getAllTags: builder.query({
         query: () => {
           return {
-            url: "api/tags",
+            url: "/tags",
             method: "GET",
           };
         },
@@ -85,7 +85,7 @@ const productsApi = createApi({
         },
         query: (product) => {
           return {
-            url: "/api/products/",
+            url: "/products/",
             method: "PUT",
             body: {
               product,
@@ -99,7 +99,7 @@ const productsApi = createApi({
         },
         query: (id) => {
           return {
-            url: "/api/products/setOnTheBanner",
+            url: "/products/setOnTheBanner",
             method: "PUT",
             body: {
               id,
@@ -113,7 +113,7 @@ const productsApi = createApi({
         },
         query: (id) => {
           return {
-            url: "/api/products/removeFromTheBanner",
+            url: "/products/removeFromTheBanner",
             method: "PUT",
             body: {
               id,
@@ -127,7 +127,7 @@ const productsApi = createApi({
         },
         query: (product) => {
           return {
-            url: "/api/products/",
+            url: "/products/",
             method: "POST",
             body: {
               product,
@@ -141,7 +141,7 @@ const productsApi = createApi({
         },
         query: (productId) => {
           return {
-            url: "/api/products/",
+            url: "/products/",
             method: "DELETE",
             body: {
               productId,

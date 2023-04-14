@@ -13,7 +13,7 @@ export const login =
         },
       };
       const response = await axios.post(
-        "/api/users/login",
+        `${process.env.BACKEND_URL}/users/login`,
         { email, password },
         config
       );
@@ -48,7 +48,7 @@ export const register =
       };
 
       const { data } = await axios.post(
-        "/api/users/register",
+        `${process.env.BACKEND_URL}/users/register`,
         { name, email, password },
         config
       );
@@ -80,7 +80,7 @@ export const changeInfo =
       };
 
       const { data } = await axios.put(
-        "/api/users/changeinfo",
+        `${process.env.BACKEND_URL}/users/changeinfo`,
         { name, surname, email },
         config
       );
@@ -113,7 +113,7 @@ export const changePassword =
       };
 
       const { data } = await axios.put(
-        "/api/users/changepassword",
+        `${process.env.BACKEND_URL}/users/changepassword`,
         { currentPassword, newPassword },
         config
       );
@@ -135,10 +135,13 @@ export const changePassword =
 
 export const sendMessage = async ({ email, message }) => {
   try {
-    const { data } = await axios.post("/api/users/sendContactMessage", {
-      email,
-      message,
-    });
+    const { data } = await axios.post(
+      `${process.env.BACKEND_URL}/users/sendContactMessage`,
+      {
+        email,
+        message,
+      }
+    );
     console.log(data);
 
     return data;

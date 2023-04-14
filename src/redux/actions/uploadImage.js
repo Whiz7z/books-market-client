@@ -8,7 +8,11 @@ export const uploadImage = async (image) => {
         "Content-Type": "multipart/form-data",
       },
     };
-    const response = await axios.post("/api/uploadimage", image, config);
+    const response = await axios.post(
+      `${process.env.BACKEND_URL}/uploadimage`,
+      image,
+      config
+    );
 
     if (response.status > 400) {
       console.log(response);
