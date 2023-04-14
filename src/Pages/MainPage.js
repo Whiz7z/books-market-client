@@ -12,7 +12,7 @@ const MainPage = () => {
       {data && isSuccess ? (
         <div className="main-page-banner">
           <img
-            src={`/images/${data.imagePath}`}
+            src={`https://books-market-server.onrender.com/api/images/${data.imagePath}`}
             alt="product"
             className="main-page-banner-img"
           />
