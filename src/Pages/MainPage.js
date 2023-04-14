@@ -21,7 +21,7 @@ const MainPage = () => {
             to={`/products/${data._id}`}
             className="main-page_banner-link-product"
           >
-            Buy now
+            Buy noww
           </Link>
         </div>
       ) : isFetching ? (
