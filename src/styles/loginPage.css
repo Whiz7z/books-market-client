@@ -1,0 +1,204 @@
+.login_page-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 700px;
+}
+
+.form_main-label {
+  justify-self: center;
+  align-self: center;
+}
+
+.login_form-container {
+  display: grid;
+  grid-column: 2/3;
+  width: 100%;
+  min-height: 350px;
+  justify-self: center;
+  border: 2px solid black;
+  align-self: center;
+
+  grid-template-rows: 50px 1fr;
+}
+
+.inputs-container {
+  position: relative;
+  padding: 20px;
+  display: grid;
+  width: 100%;
+  align-items: center;
+  justify-self: center;
+  row-gap: 25px;
+}
+
+.form-field-label-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-self: center;
+  row-gap: 20px;
+}
+
+.login_form-btn {
+  width: 200px;
+  height: 40px;
+  line-height: 38px;
+  justify-self: center;
+  background-color: transparent;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  justify-self: center;
+  transition: 200ms;
+  border: 2px solid var(--text);
+}
+
+.login_btn-switch {
+  display: block;
+  text-align: center;
+  width: 200px;
+  height: 40px;
+  line-height: 38px;
+  justify-self: center;
+  font-size: 14px;
+  background-color: transparent;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  justify-self: center;
+  transition: 200ms;
+  color: var(--text);
+  border: 2px solid var(--text);
+}
+
+.login_btn-switch:hover {
+  background-color: var(--danger);
+  border-color: transparent;
+  color: white;
+}
+
+.login_form-btn:hover {
+  background-color: var(--btnhover);
+  color: white;
+  transition: 0.3s;
+  border-color: transparent;
+}
+.login_form-btn-back:hover {
+  background-color: var(--danger);
+  color: white;
+  transition: 0.3s;
+  border-color: transparent;
+}
+
+.login_form-field-container {
+  width: 100%;
+}
+
+.edit-field {
+  resize: vertical;
+  min-height: 40px;
+}
+
+.login_form-field {
+  width: 100%;
+  height: 40px;
+  line-height: 30px;
+  padding-left: 10px;
+  font-size: 20px;
+  background-color: white;
+  border: 2px solid var(--dark);
+}
+
+.form-error {
+  color: red;
+  font-size: 14px;
+}
+
+.login_form-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-self: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  column-gap: 15px;
+}
+
+.login_form-one_button {
+  justify-self: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.form_btn-icon {
+  display: inline-block;
+  margin-left: 5px;
+  margin-top: 20px;
+}
+
+.card-form {
+  display: grid;
+  grid-template-columns: minmax(0, 150px) 1fr minmax(0, 150px);
+  row-gap: 20px;
+}
+
+.FormGroup {
+  width: 600px;
+  height: 30px;
+  line-height: 30px;
+  justify-self: center;
+  grid-column: 2/3;
+}
+
+.card_form-pay_btn {
+  width: 200px;
+  height: 30px;
+  line-height: 30px;
+  background-color: rgba(255, 166, 0, 0.7);
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  justify-self: center;
+
+  grid-column: 2/3;
+}
+
+@media only screen and (max-width: 660px) {
+  /* .login_page-container {
+    grid-template-columns: 30px minmax(500px, 1fr) 30px;
+    justify-content: center;
+  } */
+
+  .login_form-buttons {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-self: center;
+    width: 400px;
+    row-gap: 25px;
+  }
+
+  .login_form-field {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .login_form-buttons {
+    width: 300px;
+  }
+
+  .login_page-container {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+
+  .login_form-container {
+    grid-column: 1/2;
+    font-size: 14px;
+  }
+  .login_form-field {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .login_form-buttons {
+    width: 200px;
+  }
+}

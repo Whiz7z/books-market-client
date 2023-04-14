@@ -1,0 +1,84 @@
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+}
+
+.edit_product_modal-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(201, 201, 201, 0.5);
+  z-index: 155;
+  left: 0;
+  top: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 300px) 1fr minmax(0, 300px);
+  overflow: scroll;
+  padding-top: 100px;
+}
+
+.edit_product_form-container {
+  max-width: 600px;
+  margin-bottom: 100px;
+  background-color: var(--main);
+  grid-column: 2/3;
+  align-self: center;
+  justify-self: center;
+  border: 2px solid black;
+  display: grid;
+  padding-bottom: 40px;
+}
+
+.admin_add-edit-form-title {
+  margin-top: 30px;
+  justify-self: center;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.edit_product_buttons {
+}
+
+.tags-container {
+  width: 100%;
+  display: flex;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  grid-auto-rows: max-content;
+  justify-content: center;
+  column-gap: 10px;
+}
+
+.form_tag-item {
+  height: 30px;
+  background-color: #083d77;
+  line-height: 30px;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  border-radius: 7px;
+  padding: 0 10px;
+  transition: 200ms;
+}
+
+.form_tag-item:hover {
+  background-color: #6184d8;
+  transition: 300ms;
+}
+
+@media only screen and (max-width: 1250px) {
+  .edit_product_modal-container {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+
+  .edit_product_form-container {
+    grid-column: 1/2;
+
+    font-size: 14px;
+  }
+
+  .login_form-field-container {
+    font-size: 12px;
+  }
+}
