@@ -32,7 +32,7 @@ const MainPage = () => {
         <div className="main-page-banner">
           <h1 className="main-page-title">We are open!!!</h1>
           <Link to="/products" className="main-page_banner-link">
-            Go to products
+            Go to productss
           </Link>
         </div>
       )}
