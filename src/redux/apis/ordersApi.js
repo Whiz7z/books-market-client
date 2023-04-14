@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 const ordersApi = createApi({
   reducerPath: "ordersApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://books-market-server.onrender.com/api",
+    baseUrl: "https://books-market-server.onrender.com",
     prepareHeaders: (headers, { getState }) => {
       const states = getState();
       if (states.user.userInfo.token) {
@@ -20,7 +20,7 @@ const ordersApi = createApi({
         },
         query: () => {
           return {
-            url: "/orders",
+            url: "/api/orders",
             method: "GET",
           };
         },
@@ -31,7 +31,7 @@ const ordersApi = createApi({
         },
         query: () => {
           return {
-            url: "/orders/myorders",
+            url: "/api/orders/myorders",
             method: "GET",
           };
         },
@@ -42,7 +42,7 @@ const ordersApi = createApi({
         },
         query: (payload) => {
           return {
-            url: "/orders/",
+            url: "/api/orders/",
             method: "PUT",
             body: {
               payload,
@@ -56,7 +56,7 @@ const ordersApi = createApi({
         },
         query: (payload) => {
           return {
-            url: "/orders/cancel",
+            url: "/api/orders/cancel",
             method: "PUT",
             body: {
               payload,

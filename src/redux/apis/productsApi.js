@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 const productsApi = createApi({
   reducerPath: "productsApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://books-market-server.onrender.com/api",
+    baseUrl: "https://books-market-server.onrender.com",
     prepareHeaders: (headers, { getState }) => {
       const states = getState();
       if (states.user.userInfo && states.user.userInfo.token) {
@@ -24,7 +24,7 @@ const productsApi = createApi({
         },
         query: (category) => {
           return {
-            url: "/products",
+            url: "/api/products",
             params: {
               category: category,
             },
@@ -35,7 +35,7 @@ const productsApi = createApi({
       getProductsByTags: builder.query({
         query: (tags) => {
           return {
-            url: "/products/byTags",
+            url: "/api/products/byTags",
             params: {
               tags: tags,
             },
@@ -46,7 +46,7 @@ const productsApi = createApi({
       getProductById: builder.query({
         query: (id) => {
           return {
-            url: "/products/byId",
+            url: "/api/products/byId",
             params: {
               id: id,
             },
@@ -57,7 +57,7 @@ const productsApi = createApi({
       getProductOfTheWeek: builder.query({
         query: () => {
           return {
-            url: "/products/ofTheWeek",
+            url: "/api/products/ofTheWeek",
 
             method: "GET",
           };
@@ -66,7 +66,7 @@ const productsApi = createApi({
       getCategoriesAndPreview: builder.query({
         query: () => {
           return {
-            url: "/products/categories",
+            url: "/api/products/categories",
             method: "GET",
           };
         },
@@ -74,7 +74,7 @@ const productsApi = createApi({
       getAllTags: builder.query({
         query: () => {
           return {
-            url: "/tags",
+            url: "/api/tags",
             method: "GET",
           };
         },
@@ -85,7 +85,7 @@ const productsApi = createApi({
         },
         query: (product) => {
           return {
-            url: "/products/",
+            url: "/api/products/",
             method: "PUT",
             body: {
               product,
@@ -99,7 +99,7 @@ const productsApi = createApi({
         },
         query: (id) => {
           return {
-            url: "/products/setOnTheBanner",
+            url: "/api/products/setOnTheBanner",
             method: "PUT",
             body: {
               id,
@@ -113,7 +113,7 @@ const productsApi = createApi({
         },
         query: (id) => {
           return {
-            url: "/products/removeFromTheBanner",
+            url: "/api/products/removeFromTheBanner",
             method: "PUT",
             body: {
               id,
@@ -127,7 +127,7 @@ const productsApi = createApi({
         },
         query: (product) => {
           return {
-            url: "/products/",
+            url: "/api/products/",
             method: "POST",
             body: {
               product,
@@ -141,7 +141,7 @@ const productsApi = createApi({
         },
         query: (productId) => {
           return {
-            url: "/products/",
+            url: "/api/products/",
             method: "DELETE",
             body: {
               productId,
