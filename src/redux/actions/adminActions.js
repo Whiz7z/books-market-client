@@ -10,7 +10,7 @@ export const updateProduct = (product, token) => async (dispatch) => {
       },
     };
     const response = await axios.put(
-      `https://books-market-server.onrender.com/api/products/`,
+      `${process.env.REACT_APP_BACKEND_URL}/api/products/`,
       { product },
       config
     );

@@ -30,7 +30,7 @@ const AdminPanelPage = () => {
     };
     const isAdminRequest = async () => {
       const response = await axios.get(
-        `https://books-market-server.onrender.com/api/users/admin`,
+        `${process.env.REACT_APP_BACKEND_URL}/api/users/admin`,
         config
       );
       setContent(response.data);

@@ -34,7 +34,7 @@ const ProductPage = () => {
         <div className="product-content">
           <div className="product_image-block">
             <img
-              src={`https://books-market-server.onrender.com/images/${product.imagePath}`}
+              src={`${process.env.REACT_APP_BACKEND_URL}/images/${product.imagePath}`}
               className="product_image"
               alt="product"
             />

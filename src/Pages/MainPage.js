@@ -13,7 +13,7 @@ const MainPage = () => {
         <div className="main-page-banner">
           <img
             crossorigin="anonymous"
-            src={`https://books-market-server.onrender.com/images/${data.imagePath}`}
+            src={`${process.env.REACT_APP_BACKEND_URL}/images/${data.imagePath}`}
             alt="product"
             className="main-page-banner-img"
           />

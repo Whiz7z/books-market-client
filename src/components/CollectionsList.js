@@ -28,7 +28,7 @@ const CollectionsList = () => {
             >
               <div className="categories_item_image-container">
                 <img
-                  src={`https://books-market-server.onrender.com/images/${el.imagePath}`}
+                  src={`${process.env.REACT_APP_BACKEND_URL}/images/${el.imagePath}`}
                   alt={"preview"}
                   className="product_item-image"
                 />

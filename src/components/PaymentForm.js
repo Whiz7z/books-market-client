@@ -40,7 +40,7 @@ export default function PaymentForm({ totalPrice }) {
       confirmParams: {
         // Make sure to change this to your payment completion page
 
-        return_url: `https://books-market-server.onrender.com/api/payment`,
+        return_url: `${process.env.REACT_APP_BACKEND_URL}/api/payment`,
       },
     });
 

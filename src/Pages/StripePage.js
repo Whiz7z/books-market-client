@@ -18,7 +18,7 @@ const StripePage = () => {
   useEffect(() => {
     const createPayment = async () => {
       const response = await axios.post(
-        `https://books-market-server.onrender.com/api/payment/create-payment-intent`,
+        `${process.env.REACT_APP_BACKEND_URL}/api/payment/create-payment-intent`,
         {
           items,
         }

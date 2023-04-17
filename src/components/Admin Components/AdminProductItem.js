@@ -46,9 +46,9 @@ const AdminProductItem = ({ product }) => {
 
   let imagePath;
   if (product.imagePath) {
-    imagePath = `https://books-market-server.onrender.com/images/${product.imagePath}`;
+    imagePath = `${process.env.REACT_APP_BACKEND_URL}/images/${product.imagePath}`;
   } else {
-    imagePath = `https://books-market-server.onrender.com/images/${product._id}.jpeg`;
+    imagePath = `${process.env.REACT_APP_BACKEND_URL}/images/${product._id}.jpeg`;
   }
   return (
     <div className="admin_product_list-item">

@@ -13,7 +13,7 @@ export const createOrder =
         },
       };
       const response = await axios.post(
-        `https://books-market-server.onrender.com/api/orders/createOrder`,
+        `${process.env.REACT_APP_BACKEND_URL}/api/orders/createOrder`,
         { buyer, items, address },
         config
       );

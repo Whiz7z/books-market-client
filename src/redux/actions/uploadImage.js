@@ -9,7 +9,7 @@ export const uploadImage = async (image) => {
       },
     };
     const response = await axios.post(
-      `https://books-market-server.onrender.com/api/uploadimage`,
+      `${process.env.REACT_APP_BACKEND_URL}/api/uploadimage`,
       image,
       config
     );

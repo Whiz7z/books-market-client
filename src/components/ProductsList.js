@@ -56,7 +56,7 @@ const ProductsList = ({ products, searchByCategory, clearSearch }) => {
                 onClick={() => moveToProductPage(product._id)}
               >
                 <img
-                  src={`https://books-market-server.onrender.com/images/${product.imagePath}`}
+                  src={`${process.env.REACT_APP_BACKEND_URL}/images/${product.imagePath}`}
                   alt="product"
                   className="product_item-image"
                 />
@@ -85,7 +85,7 @@ const ProductsList = ({ products, searchByCategory, clearSearch }) => {
                 onClick={() => moveToProductPage(product._id)}
               >
                 <img
-                  src={`https://books-market-server.onrender.com/images/${product.imagePath}`}
+                  src={`${process.env.REACT_APP_BACKEND_URL}/images/${product.imagePath}`}
                   alt="product"
                   className="product_item-image"
                 />
