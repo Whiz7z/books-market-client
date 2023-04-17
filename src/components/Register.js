@@ -70,7 +70,11 @@ const Register = () => {
                 Password
               </label>
               <div className="login_form-field-container">
-                <Field name="password" className="login_form-field" />
+                <Field
+                  type="password"
+                  name="password"
+                  className="login_form-field"
+                />
                 {errors.password && touched.password ? (
                   <div className="form-error">{errors.password}</div>
                 ) : null}

@@ -29,7 +29,9 @@ const Menu = () => {
   return (
     <header className="header-wrapper">
       <div className="top-menu">
-        <div className="logo">Books market</div>
+        <Link to="/main" className="logo">
+          Books market
+        </Link>
 
         {localStorage.getItem("userInfo") &&
         JSON.parse(localStorage.getItem("userInfo")).token ? (

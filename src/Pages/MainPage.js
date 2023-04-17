@@ -17,12 +17,12 @@ const MainPage = () => {
             alt="product"
             className="main-page-banner-img"
           />
-          <h1 className="main-page-title-product">Product of the weekk</h1>
+          <h1 className="main-page-title-product">Product of the week</h1>
           <Link
             to={`/products/${data._id}`}
             className="main-page_banner-link-product"
           >
-            Buy noww
+            Buy now
           </Link>
         </div>
       ) : isFetching ? (
@@ -33,7 +33,7 @@ const MainPage = () => {
         <div className="main-page-banner">
           <h1 className="main-page-title">We are open!!!</h1>
           <Link to="/products" className="main-page_banner-link">
-            Go to productss
+            Go to products
           </Link>
         </div>
       )}
