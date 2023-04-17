@@ -8,7 +8,7 @@
   margin: 0 10px;
 }
 
-.order-main-titles-admin,
+.order-main-titles-admin > div,
 .order-main-titles > div {
   width: 100%;
   height: 100%;
@@ -17,14 +17,18 @@
   text-align: center;
 }
 
-.order-main-titles-admin,
+.order-main-titles-admin > .order-price,
+.order-title-date,
+.order-status,
 .order-main-titles > .order-price,
 .order-title-date,
 .order-status {
   cursor: pointer;
 }
 
-.order-main-titles-admin,
+.order-main-titles-admin > .order-price:hover,
+.order-title-date:hover,
+.order-status:hover,
 .order-main-titles > .order-price:hover,
 .order-title-date:hover,
 .order-status:hover {
