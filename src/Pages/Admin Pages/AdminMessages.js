@@ -1,57 +1,86 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useGetAllMessagesQuery } from "../../redux/store";
+import AdminMessageItem from "../../components/Admin Components/AdminMessageItem";
 import { nanoid } from "nanoid";
 import "../../styles/adminMessages.css";
-import { useUpdateMessageStatusMutation } from "../../redux/store";
 
 const AdminMessages = () => {
-  const { data, error, isFetching } = useGetAllMessagesQuery();
-  const [updateMessageStatus, results] = useUpdateMessageStatusMutation();
+  const { data, error, isFetching, isSuccess } = useGetAllMessagesQuery();
 
-  if (data) {
-    console.log(data);
-  }
+  const [sortedBy, setSortedBy] = useState("none");
 
-  const changeReadStatus = (id) => {
-    updateMessageStatus({ id: id });
+  const sorted = useRef();
+  useEffect(() => {
+    if (data && isSuccess) {
+      sorted.current = data.slice();
+    }
+  }, [data, isSuccess]);
+
+  const sortByDate = () => {
+    if (data && isSuccess && sortedBy !== "fromNewDate") {
+      setSortedBy("fromNewDate");
+      sorted.current = data.slice().sort(function (a, b) {
+        return new Date(b.createdAt) - new Date(a.createdAt);
+      });
+    } else if (data && isSuccess && sortedBy !== "none") {
+      setSortedBy("none");
+      sorted.current = data.slice().sort(function (a, b) {
+        return new Date(a.createdAt) - new Date(b.createdAt);
+      });
+    }
   };
+
+  const sortByStatus = () => {
+    if (data && isSuccess && sortedBy !== "byUnread") {
+      setSortedBy("byUnread");
+      sorted.current = data.slice().sort((a, b) => {
+        if (a.isRead === true && b.isRead !== true) {
+          return -1;
+        } else {
+          return 1;
+        }
+      });
+      console.log("byunRead");
+    } else if (data && isSuccess && sortedBy !== "byRead") {
+      setSortedBy("byRead");
+      sorted.current = data.slice().sort((a, b) => {
+        if (a.isRead === false && b.isRead !== false) {
+          return -1;
+        } else {
+          return 1;
+        }
+      });
+      console.log("byRead");
+    }
+  };
+
+  console.log(data);
 
   return (
     <div className="messages_wrapper">
       <h2 className="messages_main-title">Messages</h2>
       <div className="messages_container">
         <div className="messages-titles">
-          <div className="message_date-title">Date</div>
+          <div className="message_date-title" onClick={() => sortByDate()}>
+            Date
+          </div>
           <div className="message_email-title">Email</div>
           <div className="message_text-title">Message</div>
-          <div className="message_status-title">Status</div>
+          <div className="message_status-title" onClick={() => sortByStatus()}>
+            Status{" "}
+            {sortedBy === "byRead"
+              ? "(Read)"
+              : sortedBy === "byUnread"
+              ? "(Unread)"
+              : null}
+          </div>
         </div>
-        {data &&
-          data.map((message) => (
-            <div
-              className={`message-item ${
-                message.isRead ? "status-read" : "status-unread"
-              }`}
-              key={nanoid(7)}
-            >
-              <div className="message-date">
-                {new Date(message.createdAt).toISOString().slice(0, 10)}
-              </div>
-              <div className="message_sender-email">{message.email}</div>
-              <div className="message_text-message">{message.message}</div>
-              <div className="message_status-container">
-                <p className="message_status">
-                  {message.isRead ? "Read" : "Unread"}
-                </p>
-                <button
-                  className="message_change_status-btn"
-                  onClick={() => changeReadStatus(message._id)}
-                >
-                  Mark as {message.isRead ? "unread" : "read"}
-                </button>
-              </div>
-            </div>
-          ))}
+        {data && sorted.current
+          ? sorted.current.map((message) => (
+              <AdminMessageItem message={message} key={nanoid(7)} />
+            ))
+          : data &&
+            data.map((message) => <AdminMessageItem message={message} />)}
       </div>
     </div>
   );
