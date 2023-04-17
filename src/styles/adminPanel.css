@@ -181,6 +181,7 @@
   border: 2px solid black;
   transition: 200ms;
   font-size: 12px;
+  margin-bottom: 20px;
 }
 
 .admin-set-on-banner:hover {

@@ -30,7 +30,7 @@ const OrderItem = ({ order }) => {
       <div className="order-titles">
         {order.orderItems.map((item) => (
           <p key={item.title}>
-            {item.title} - ({item.quantity})
+            {item.title} - (x{item.quantity})
           </p>
         ))}
       </div>

@@ -12,6 +12,11 @@ import StripePage from "./Pages/StripePage";
 import MainPage from "./Pages/MainPage";
 import ProductPage from "./Pages/ProductPage";
 import ProtectedRoutes from "./components/Admin Components/ProtectedRoutes";
+
+if (process.env.REACT_APP_MODE === "production") {
+  console.log = function () {};
+}
+
 function App() {
   return (
     <div>

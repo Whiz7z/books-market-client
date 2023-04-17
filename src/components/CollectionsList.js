@@ -45,7 +45,6 @@ const CollectionsList = () => {
               </Link>
             </div>
           ))}
-        ;
       </div>
     </>
   );

@@ -12,7 +12,7 @@ const MainPage = () => {
       {data && isSuccess ? (
         <div className="main-page-banner">
           <img
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
             src={`${process.env.REACT_APP_BACKEND_URL}/images/${data.imagePath}`}
             alt="product"
             className="main-page-banner-img"
