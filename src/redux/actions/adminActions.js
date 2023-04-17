@@ -34,7 +34,7 @@ export const getAllTags = async (token) => {
     // };
 
     const response = await axios.get(
-      `https://books-market-server.onrender.com/api/tags/`
+      `${process.env.REACT_APP_BACKEND_URL}/api/tags/`
     );
     //console.log(response.data);
     if (response.status > 400) {
