@@ -95,7 +95,11 @@ const AdminOrdersList = () => {
     }
   };
 
-  console.log(data);
+  const statusChangesHandler = () => {
+    setSortedBy("none");
+    sorted.current = undefined;
+  };
+
   return (
     <div className="order_list-page">
       <h2 className="order-title">Orders</h2>
@@ -125,11 +129,19 @@ const AdminOrdersList = () => {
         </div>
         {data && sorted.current
           ? sorted.current.map((order) => (
-              <AdminOrderItem key={order._id} order={order} />
+              <AdminOrderItem
+                key={order._id}
+                order={order}
+                onStatusChange={() => statusChangesHandler()}
+              />
             ))
           : data &&
             data.map((order) => (
-              <AdminOrderItem key={order._id} order={order} />
+              <AdminOrderItem
+                key={order._id}
+                order={order}
+                onStatusChange={() => statusChangesHandler()}
+              />
             ))}
       </div>
     </div>

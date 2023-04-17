@@ -95,8 +95,10 @@ const Orders = () => {
       });
     }
   };
-
-  console.log(data);
+  const statusChangesHandler = () => {
+    setSortedBy("none");
+    sorted.current = undefined;
+  };
   return (
     <div className="orders-wrapper">
       <div className="order_list-page">
@@ -127,10 +129,20 @@ const Orders = () => {
           </div>
           {data && sorted.current
             ? sorted.current.map((order) => (
-                <OrderItem key={order._id} order={order} />
+                <OrderItem
+                  key={order._id}
+                  order={order}
+                  onStatusChange={() => statusChangesHandler()}
+                />
               ))
             : data &&
-              data.map((order) => <OrderItem key={order._id} order={order} />)}
+              data.map((order) => (
+                <OrderItem
+                  key={order._id}
+                  order={order}
+                  onStatusChange={() => statusChangesHandler()}
+                />
+              ))}
         </div>
       </div>
     </div>

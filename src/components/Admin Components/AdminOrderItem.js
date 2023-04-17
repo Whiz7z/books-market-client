@@ -5,7 +5,7 @@ import { Field, Form, Formik, FormikProps } from "formik";
 import { useUpdateOrderStatusMutation } from "../../redux/store";
 import { createGlobalStyle } from "styled-components";
 
-const AdminOrderItem = ({ order }) => {
+const AdminOrderItem = ({ order, onStatusChange }) => {
   const [changeStatus, results] = useUpdateOrderStatusMutation();
   const createdAt = new Date(order.createdAt).toISOString().slice(0, 10);
   return (
@@ -48,7 +48,9 @@ const AdminOrderItem = ({ order }) => {
               if (values.status.length > 1) {
                 const payload = { orderId: order._id, status: values.status };
                 changeStatus(payload);
+                onStatusChange();
               }
+
               actions.resetForm();
             }}
           >

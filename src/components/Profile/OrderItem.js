@@ -3,10 +3,11 @@ import { Field, Form, Formik } from "formik";
 import ProductModal from "../ProductModal";
 import CancelOrderModal from "../CancelOrderModal";
 
-const OrderItem = ({ order }) => {
+const OrderItem = ({ order, onStatusChange }) => {
   const [cancelOrder, setCancelOrder] = useState(false);
 
   const closeModalHandler = () => {
+    onStatusChange();
     setCancelOrder(false);
   };
   const createdAt = new Date(order.createdAt).toISOString().slice(0, 10);

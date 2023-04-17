@@ -10,6 +10,7 @@ const CancelOrderModal = ({ orderId, onCloseModal }) => {
   const cancelOrderHandler = async () => {
     const payload = { orderId: orderId, status: "Canceled" };
     await cancelOrder(payload);
+    onCloseModal();
   };
   return (
     <div className="confirm_delete-container">
