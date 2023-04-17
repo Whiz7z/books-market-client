@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { useUpdateMessageStatusMutation } from "../../redux/store";
 
-const AdminMessageItem = ({ message }) => {
+const AdminMessageItem = ({ message, statusChanged }) => {
   const [updateMessageStatus, results] = useUpdateMessageStatusMutation();
   const changeReadStatus = (id) => {
     updateMessageStatus({ id: id });
+    statusChanged();
   };
   return (
     <div

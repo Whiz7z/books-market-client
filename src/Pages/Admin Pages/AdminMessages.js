@@ -34,7 +34,7 @@ const AdminMessages = () => {
     if (data && isSuccess && sortedBy !== "byUnread") {
       setSortedBy("byUnread");
       sorted.current = data.slice().sort((a, b) => {
-        if (a.isRead === true && b.isRead !== true) {
+        if (a.isRead === false && b.isRead !== false) {
           return -1;
         } else {
           return 1;
@@ -44,7 +44,7 @@ const AdminMessages = () => {
     } else if (data && isSuccess && sortedBy !== "byRead") {
       setSortedBy("byRead");
       sorted.current = data.slice().sort((a, b) => {
-        if (a.isRead === false && b.isRead !== false) {
+        if (a.isRead === true && b.isRead !== true) {
           return -1;
         } else {
           return 1;
@@ -54,7 +54,16 @@ const AdminMessages = () => {
     }
   };
 
-  console.log(data);
+  const statusChangesHandler = () => {
+    setSortedBy("none");
+    sorted.current = undefined;
+  };
+
+  useEffect(() => {
+    if (sorted.current) {
+      console.log(sorted.current);
+    }
+  }, [sorted]);
 
   return (
     <div className="messages_wrapper">
@@ -75,12 +84,22 @@ const AdminMessages = () => {
               : null}
           </div>
         </div>
-        {data && sorted.current
-          ? sorted.current.map((message) => (
-              <AdminMessageItem message={message} key={nanoid(7)} />
+        {data && sortedBy === "none"
+          ? data.map((message) => (
+              <AdminMessageItem
+                message={message}
+                key={nanoid(7)}
+                statusChanged={() => statusChangesHandler()}
+              />
             ))
           : data &&
-            data.map((message) => <AdminMessageItem message={message} />)}
+            sorted.current.map((message) => (
+              <AdminMessageItem
+                message={message}
+                key={nanoid(7)}
+                statusChanged={() => statusChangesHandler()}
+              />
+            ))}
       </div>
     </div>
   );
