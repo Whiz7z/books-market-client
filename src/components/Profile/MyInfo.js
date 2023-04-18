@@ -5,6 +5,7 @@ import { Link, Navigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { changeInfo, changePassword } from "../../redux/actions/userActions";
 import { createGlobalStyle } from "styled-components";
+import Button from "../UI/Button";
 
 const SingInSchema = Yup.object().shape({
   name: Yup.string()
@@ -99,9 +100,9 @@ const MyInfo = () => {
                 </div>
               </div>
 
-              <button type="submit" className="myInfo_save-changes-btn">
+              <Button type="submit" className="myInfo_save-changes-btn">
                 Save
-              </button>
+              </Button>
             </Form>
           )}
         </Formik>
@@ -167,9 +168,13 @@ const MyInfo = () => {
                 </div>
               </div>
 
-              <button type="submit" className="myInfo_save-changes-btn">
+              <Button
+                padding="0 15px"
+                type="submit"
+                className="myInfo_save-changes-btn"
+              >
                 Save new password
-              </button>
+              </Button>
             </Form>
           )}
         </Formik>

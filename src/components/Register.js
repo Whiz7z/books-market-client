@@ -4,8 +4,10 @@ import * as Yup from "yup";
 import { createGlobalStyle } from "styled-components";
 import { BiCaretRight } from "react-icons/bi";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import { register } from "../redux/actions/userActions";
+import Button from "./UI/Button";
 
 //style={{ gridTemplateRows: "1fr 1fr 1fr 1fr" }}
 
@@ -22,8 +24,11 @@ const SingInSchema = Yup.object().shape({
 });
 
 const Register = () => {
+  const location = useLocation();
   const dispatch = useDispatch();
-  return (
+  const user = useSelector((state) => state.user);
+  const { userInfo, error, loading, updateSuccess } = user;
+  return !userInfo ? (
     <div className="login_form-container">
       <h2 className="form_main-label">Registration</h2>
       <Formik
@@ -81,19 +86,28 @@ const Register = () => {
               </div>
             </div>
             <div className="login_form-buttons">
-              <button type="submit" className="login_form-btn">
+              <Button width="200px" type="submit" className="login_form-btn">
                 Register
-              </button>
-              <Link to="/login">
-                <button as={Link} type="button" className="login_btn-switch">
-                  Switch to Sign In
-                </button>
-              </Link>
+              </Button>
+
+              <Button
+                isLink
+                linkDirection="/login"
+                danger
+                width="200px"
+                as={Link}
+                type="button"
+                className="login_btn-switch"
+              >
+                Switch to Sign In
+              </Button>
             </div>
           </Form>
         )}
       </Formik>
     </div>
+  ) : (
+    <Navigate to="/products" replace={true} state={{ from: location }} />
   );
 };
 

@@ -10,7 +10,7 @@ import * as Yup from "yup";
 import { Formik, Form, Field } from "formik";
 import { Link } from "react-router-dom";
 import { useSelectedTags } from "./zustand/store";
-
+import Button from "./UI/Button";
 const selected = "#eab839";
 
 const TagsSearchBar = ({ onSearch, onClearSearch }) => {
@@ -103,20 +103,26 @@ const TagsSearchBar = ({ onSearch, onClearSearch }) => {
             );
           })}
       </div>
-      <Link
-        to={tags.length !== 0 ? `tags/${tags}` : ""}
-        state={{ tags: tags }}
-        className="categories_search_by_tags-btn"
-        onClick={() => searchByTagsHandler(tags)}
-      >
-        Search
-      </Link>
-      <button
-        className="categories_clear_tags-btn"
-        onClick={() => clearSearchAndTags()}
-      >
-        Clear
-      </button>
+      <div className="tags_bar-btns">
+        <Button
+          isLink
+          height="40px"
+          linkDirection={tags.length !== 0 ? `tags/${tags}` : "/products"}
+          state={{ tags: tags }}
+          className="categories_search_by_tags-btn"
+          onClick={() => searchByTagsHandler(tags)}
+        >
+          Search
+        </Button>
+        <Button
+          danger
+          height="40px"
+          className="categories_clear_tags-btn"
+          onClick={() => clearSearchAndTags()}
+        >
+          Clear
+        </Button>
+      </div>
     </>
   );
 };

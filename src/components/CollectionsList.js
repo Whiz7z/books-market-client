@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useGetCategoriesAndPreviewQuery } from "../redux/store";
 import { Link, useNavigate } from "react-router-dom";
+import Button from "./UI/Button";
 
 const CollectionsList = () => {
   const navigate = useNavigate();
@@ -37,12 +38,13 @@ const CollectionsList = () => {
               <p className="product_category-description">
                 {dataCategories.counts[el.category]} Products
               </p>
-              <Link
-                to={`category/${el.category}`}
+              <Button
+                isLink
+                linkDirection={`category/${el.category}`}
                 className="product_view_product-btn"
               >
                 View Products
-              </Link>
+              </Button>
             </div>
           ))}
       </div>

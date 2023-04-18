@@ -4,6 +4,7 @@ import "../../styles/adminOrder.css";
 import { Field, Form, Formik, FormikProps } from "formik";
 import { useUpdateOrderStatusMutation } from "../../redux/store";
 import { createGlobalStyle } from "styled-components";
+import Button from "../UI/Button";
 
 const AdminOrderItem = ({ order, onStatusChange }) => {
   const [changeStatus, results] = useUpdateOrderStatusMutation();
@@ -67,9 +68,13 @@ const AdminOrderItem = ({ order, onStatusChange }) => {
                   <option value="delivered">Delivered</option>
                 </Field>
 
-                <button className="admin_order_change_status-btn" type="submit">
+                <Button
+                  width="120px"
+                  className="admin_order_change_status-btn"
+                  type="submit"
+                >
                   Change status
-                </button>
+                </Button>
               </Form>
             )}
           </Formik>

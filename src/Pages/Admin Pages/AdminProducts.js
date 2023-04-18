@@ -4,6 +4,7 @@ import AdminAddNewProduct from "../../components/Admin Components/AdminAddNewPro
 import ProductModal from "../../components/ProductModal";
 import TagsSeTagsAdminSearchBar from "./../../components/Admin Components/TagsAdminSearchBar";
 import { useLazyGetProductsByTagsQuery } from "../../redux/store";
+import Button from "../../components/UI/Button";
 
 const AdminProducts = () => {
   const [addNewProduct, setAddNewProduct] = useState();
@@ -36,12 +37,12 @@ const AdminProducts = () => {
         />
       </div>
       <div className="products-admin-content">
-        <button
+        <Button
           className="admin_add_new_product-btn"
           onClick={() => setAddNewProduct(true)}
         >
           Add new product
-        </button>
+        </Button>
         {showProductsByTags ? (
           <AdminProductsList productsByTags={findedProductsByTags} />
         ) : (

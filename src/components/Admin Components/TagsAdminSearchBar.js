@@ -6,7 +6,7 @@ import {
   useGetAllTagsQuery,
   useLazyGetProductsByTagsQuery,
 } from "../../redux/store";
-
+import Button from "../UI/Button";
 import { Link } from "react-router-dom";
 import { useSelectedTags } from "../zustand/store";
 
@@ -96,19 +96,24 @@ const TagsSeTagsAdminSearchBar = ({ onSearch, onClearSearch }) => {
             );
           })}
       </div>
-      <Link
-        to=""
-        className="categories_search_by_tags-btn"
-        onClick={() => searchByTagsHandler(tags)}
-      >
-        Search
-      </Link>
-      <button
-        className="categories_clear_tags-btn"
-        onClick={() => clearSearchAndTags()}
-      >
-        Clear
-      </button>
+      <div className="tags_bar-btns">
+        <Button
+          isLink
+          linkDirection="/adminPanel/adminProducts"
+          className="categories_search_by_tags-btn"
+          onClick={() => searchByTagsHandler(tags)}
+        >
+          Search
+        </Button>
+        <Button
+          danger
+          className="categories_clear_tags-btn"
+          onClick={() => clearSearchAndTags()}
+        >
+          Clear
+        </Button>
+      </div>
+
       <h2 className="categories-title">Find by category</h2>
       <div className="categories_list-container">
         {categories &&

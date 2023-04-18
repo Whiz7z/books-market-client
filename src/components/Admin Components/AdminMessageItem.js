@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "../UI/Button";
 
 import { useUpdateMessageStatusMutation } from "../../redux/store";
 
@@ -21,12 +22,13 @@ const AdminMessageItem = ({ message, statusChanged }) => {
       <div className="message_text-message">{message.message}</div>
       <div className="message_status-container">
         <p className="message_status">{message.isRead ? "Read" : "Unread"}</p>
-        <button
+        <Button
+          width="140px"
           className="message_change_status-btn"
           onClick={() => changeReadStatus(message._id)}
         >
           Mark as {message.isRead ? "unread" : "read"}
-        </button>
+        </Button>
       </div>
     </div>
   );

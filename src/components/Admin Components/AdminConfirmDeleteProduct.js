@@ -1,5 +1,6 @@
 import React from "react";
 import { useDeleteProductMutation } from "../../redux/store";
+import Button from "../UI/Button";
 import "../../styles/confirmDeleteProduct.css";
 
 const AdminConfirmDeleteProduct = ({ productId, onCloseModal }) => {
@@ -16,15 +17,16 @@ const AdminConfirmDeleteProduct = ({ productId, onCloseModal }) => {
           Are You sure, You want to delete this product?
         </h3>
         <div className="confirm_delete-buttons">
-          <button className="confirm_goback-btn" onClick={() => onCloseModal()}>
+          <Button className="confirm_goback-btn" onClick={() => onCloseModal()}>
             Go back
-          </button>
-          <button
+          </Button>
+          <Button
+            danger
             className="confirm_confirm-btn"
             onClick={() => deleteProductHandler(productId)}
           >
             Delete
-          </button>
+          </Button>
         </div>
       </div>
     </div>

@@ -139,21 +139,7 @@
 }
 
 .contact_submit-btn {
-  width: 140px;
-  height: 40px;
   justify-self: end;
-  background-color: transparent;
-  border: 2px solid var(--dark);
-  transition: 200ms;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.contact_submit-btn:hover {
-  transition: 300ms;
-  border-color: transparent;
-  background-color: var(--btnhover);
-  color: white;
 }
 
 .form-error {

@@ -13,25 +13,8 @@
 
 .go-back-btn {
   grid-column: 2/3;
-  height: 20px;
   justify-self: start;
-  width: 145px;
-  display: block;
-  text-align: center;
-  border: 2px solid var(--text);
-  background-color: transparent;
-  box-sizing: content-box;
-  transition: 200ms;
-  padding: 8px;
-  cursor: pointer;
   margin-top: 20px;
-}
-
-.go-back-btn:hover {
-  transition: 300ms;
-  background-color: var(--danger);
-  border-color: transparent;
-  color: white;
 }
 
 .product-content {
@@ -104,15 +87,8 @@
 
 .product_page-btn {
   justify-self: start;
-  width: 145px;
-  display: block;
   text-align: center;
-  border: 2px solid var(--text);
-  background-color: transparent;
-  box-sizing: content-box;
-  transition: 200ms;
-  padding: 8px;
-  cursor: pointer;
+
   margin-top: 20px;
 }
 

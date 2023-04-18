@@ -4,6 +4,7 @@ import { useGetProductByIdQuery } from "../redux/store";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/store";
 import { useSelectedTags } from "../components/zustand/store";
+import Button from "../components/UI/Button";
 import "../styles/productPage.css";
 
 const ProductPage = () => {
@@ -24,12 +25,13 @@ const ProductPage = () => {
 
   return (
     <div className="product-wrapper">
-      <button
+      <Button
+        danger
         className="go-back-btn"
         onClick={() => navigate(-1, { replace: true })}
       >
         Go Back
-      </button>
+      </Button>
       {product && (
         <div className="product-content">
           <div className="product_image-block">
@@ -66,12 +68,12 @@ const ProductPage = () => {
           </div>
           <div className="product_add-to-cart">
             <h4 className="product_add-to-cart-price">${product.price}</h4>
-            <button
+            <Button
               className="product_page-btn"
               onClick={() => addToCartHandler(product)}
             >
               Add to cart
-            </button>
+            </Button>
           </div>
           <div className="product_description">
             <h3 className="product_description-title">Description</h3>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Field, Form, Formik } from "formik";
 import ProductModal from "../ProductModal";
 import CancelOrderModal from "../CancelOrderModal";
+import Button from "../UI/Button";
 
 const OrderItem = ({ order, onStatusChange }) => {
   const [cancelOrder, setCancelOrder] = useState(false);
@@ -51,7 +52,14 @@ const OrderItem = ({ order, onStatusChange }) => {
             >
               {({ errors, touched, values, handleChange, setFieldValue }) => (
                 <Form className="order_change_status-form">
-                  <button className="order_cancel-btn">Cancel order</button>
+                  <Button
+                    danger
+                    width="150px"
+                    padding="0 15px"
+                    className="order_cancel-btn"
+                  >
+                    Cancel order
+                  </Button>
                 </Form>
               )}
             </Formik>

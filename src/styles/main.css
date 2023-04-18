@@ -178,22 +178,9 @@ button::-moz-focus-inner {
 }
 
 .products_goback-btn {
-  background-color: transparent;
-  border: 2px solid black;
-  height: 40px;
-  padding: 5px 10px;
-  transition: 200ms;
   justify-self: start;
-  cursor: pointer;
-  margin-left: 20px;
-  transition: 200ms;
-}
 
-.products_goback-btn:hover {
-  background-color: var(--danger);
-  border-color: transparent;
-  color: white;
-  transition: 300ms;
+  margin-left: 20px;
 }
 
 .products-title {
@@ -278,49 +265,23 @@ button::-moz-focus-inner {
   cursor: pointer;
 }
 
-.categories_search_by_tags-btn {
-  justify-self: start;
-  width: 145px;
-  display: block;
-  text-align: center;
-  border: 2px solid var(--text);
-  background-color: transparent;
-  padding: 8px 0;
-  box-sizing: content-box;
-  transition: 100ms;
-  cursor: pointer;
-  margin: 0 auto;
-  margin-top: 20px;
-  font-size: 14px;
+.tags_bar-btns {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr;
 }
-.categories_search_by_tags-btn:hover {
-  transition: 300ms;
-  background-color: var(--btnhover);
-  color: white;
-  border-color: transparent;
+
+.categories_search_by_tags-btn {
+  justify-self: center;
+
+  text-align: center;
+  margin-top: 20px;
 }
 
 .categories_clear_tags-btn {
-  justify-self: start;
-  width: 145px;
-  display: block;
-  text-align: center;
-  border: 2px solid var(--text);
-  background-color: transparent;
-  padding: 8px 0;
-  box-sizing: content-box;
-  transition: 100ms;
-  cursor: pointer;
-  margin: 0 auto;
+  justify-self: center;
   margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.categories_clear_tags-btn:hover {
-  transition: 300ms;
-  background-color: var(--danger);
-  color: white;
-  border-color: transparent;
+  text-align: center;
 }
 
 .product_item-price {
@@ -350,14 +311,8 @@ button::-moz-focus-inner {
 }
 
 .addtocart-btn {
-  height: 35px;
   justify-self: center;
-  background-color: transparent;
-  border: 2px solid black;
-  cursor: pointer;
-  transition: 200ms;
-  padding-left: 10px;
-  padding-right: 10px;
+
   z-index: 20;
 }
 
@@ -415,20 +370,6 @@ button::-moz-focus-inner {
 
 .product_view_product-btn {
   justify-self: start;
-  width: 145px;
-  display: block;
-  text-align: center;
-  border: 2px solid var(--text);
-  padding: 8px 0;
-  box-sizing: content-box;
-  transition: 100ms;
-}
-
-.product_view_product-btn:hover {
-  transition: 300ms;
-  background-color: var(--btnhover);
-  border-color: transparent;
-  color: white;
 }
 
 @media only screen and (max-width: 1750px) {

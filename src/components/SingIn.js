@@ -7,6 +7,7 @@ import { Link, Navigate } from "react-router-dom";
 import { login } from "../redux/actions/userActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router";
+import Button from "./UI/Button";
 
 const SingInSchema = Yup.object().shape({
   password: Yup.string()
@@ -69,12 +70,18 @@ const SingIn = () => {
               </div>
             </div>
             <div className="login_form-buttons">
-              <button type="submit" className="login_form-btn">
+              <Button width="200px" type="submit" className="login_form-btn">
                 Sign In
-              </button>
-              <Link to="/registration" className="login_btn-switch">
+              </Button>
+              <Button
+                isLink
+                width="200px"
+                danger
+                linkDirection="/registration"
+                className="login_btn-switch"
+              >
                 Switch to Sign Up
-              </Link>
+              </Button>
             </div>
           </Form>
         )}

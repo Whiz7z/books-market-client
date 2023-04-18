@@ -42,24 +42,10 @@
 }
 
 .myInfo_save-changes-btn {
-  width: 200px;
-  height: 40px;
-  line-height: 30px;
   justify-self: center;
-  background-color: transparent;
-  cursor: pointer;
-  color: rgb(0, 0, 0);
+
   justify-self: center;
   margin-top: 20px;
-  border: 2px solid black;
-  transition: 200ms;
-}
-
-.myInfo_save-changes-btn:hover {
-  background-color: var(--btnhover);
-  color: white;
-  transition: 0.3s;
-  border-color: transparent;
 }
 
 .myInfo_change-password-form-container {

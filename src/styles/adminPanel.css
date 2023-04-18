@@ -138,34 +138,7 @@
   align-self: end;
 }
 
-.admin_delete_product-btn {
-  background-color: transparent;
-  cursor: pointer;
-  height: 40px;
-  border: 2px solid black;
-  transition: 200ms;
-}
-
-.admin_delete_product-btn:hover {
-  background-color: var(--danger);
-  color: white;
-  border-color: transparent;
-  transition: 300ms;
-}
-
 .admin_edit_product-btn {
-  height: 40px;
-  background-color: transparent;
-  cursor: pointer;
-  border: 2px solid black;
-  transition: 200ms;
-}
-
-.admin_edit_product-btn:hover {
-  background-color: var(--btnhover);
-  color: white;
-  transition: 300ms;
-  border-color: transparent;
 }
 
 .admin_product_set-on-banner {
@@ -174,12 +147,6 @@
 }
 
 .admin_product_set-on-banner-btn {
-  height: 40px;
-  padding: 0 10px;
-  background-color: transparent;
-  cursor: pointer;
-  border: 2px solid black;
-  transition: 200ms;
   font-size: 12px;
   margin-bottom: 20px;
 }
@@ -247,23 +214,10 @@
 }
 
 .admin_add_new_product-btn {
-  border: 2px solid black;
-  height: 40px;
-  width: 140px;
   margin-right: 100px;
   margin-top: 60px;
   margin-bottom: 30px;
-  background-color: transparent;
-  cursor: pointer;
   justify-self: flex-end;
-  transition: 200ms;
-}
-
-.admin_add_new_product-btn:hover {
-  background-color: var(--btnhover);
-  border-color: transparent;
-  color: white;
-  transition: 300ms;
 }
 
 .category_field-container {

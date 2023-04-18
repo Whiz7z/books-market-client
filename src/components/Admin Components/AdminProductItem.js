@@ -8,6 +8,7 @@ import {
 } from "../../redux/store";
 import { useSelector } from "react-redux";
 import AdminConfirmDeleteProduct from "./AdminConfirmDeleteProduct";
+import Button from "../UI/Button";
 
 const AdminProductItem = ({ product }) => {
   const [deleteProduct, deleteProductResults] = useDeleteProductMutation();
@@ -61,34 +62,37 @@ const AdminProductItem = ({ product }) => {
       <p className="admin_product_item-stock">Stock - {product.stock}</p>
       <p className="admin_product_item-price">Price - ${product.price}</p>
       <div className="admin_product-buttons">
-        <button
+        <Button
+          danger
           className="admin_delete_product-btn"
           onClick={() => openDeleteModal()}
         >
           Delete Item
-        </button>
-        <button
+        </Button>
+        <Button
           className="admin_edit_product-btn"
           onClick={() => editProductHandler(product)}
         >
           Edit Item
-        </button>
+        </Button>
       </div>
       <div className="admin_product_set-on-banner">
         {product.isProductOfTheWeek ? (
-          <button
+          <Button
+            padding="0 10px"
             className="admin_product_set-on-banner-btn admin-remove-from-banner"
             onClick={() => removeProductFromTheBannerHandler(product._id)}
           >
             Remove product from the banner
-          </button>
+          </Button>
         ) : (
-          <button
+          <Button
+            padding="0 10px"
             className="admin_product_set-on-banner-btn admin-set-on-banner"
             onClick={() => setProductOnTheBanner(product._id)}
           >
             Set as product of the week
-          </button>
+          </Button>
         )}
       </div>
       {editProduct && (

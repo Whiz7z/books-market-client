@@ -40,52 +40,15 @@
 }
 
 .login_form-btn {
-  width: 200px;
-  height: 40px;
-  line-height: 38px;
   justify-self: center;
-  background-color: transparent;
-  cursor: pointer;
-  color: rgb(0, 0, 0);
+
   justify-self: center;
-  transition: 200ms;
-  border: 2px solid var(--text);
 }
 
 .login_btn-switch {
-  display: block;
   text-align: center;
-  width: 200px;
-  height: 40px;
-  line-height: 38px;
-  justify-self: center;
-  font-size: 14px;
-  background-color: transparent;
-  cursor: pointer;
-  color: rgb(0, 0, 0);
-  justify-self: center;
-  transition: 200ms;
-  color: var(--text);
-  border: 2px solid var(--text);
-}
 
-.login_btn-switch:hover {
-  background-color: var(--danger);
-  border-color: transparent;
-  color: white;
-}
-
-.login_form-btn:hover {
-  background-color: var(--btnhover);
-  color: white;
-  transition: 0.3s;
-  border-color: transparent;
-}
-.login_form-btn-back:hover {
-  background-color: var(--danger);
-  color: white;
-  transition: 0.3s;
-  border-color: transparent;
+  justify-self: center;
 }
 
 .login_form-field-container {

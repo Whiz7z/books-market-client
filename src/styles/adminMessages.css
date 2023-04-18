@@ -75,22 +75,6 @@
   margin-bottom: 10px;
 }
 
-.message_change_status-btn {
-  width: 140px;
-  height: 40px;
-  background-color: transparent;
-  border: 2px solid black;
-  transition: 200ms;
-  cursor: pointer;
-}
-
-.message_change_status-btn:hover {
-  border-color: transparent;
-  transition: 300ms;
-  background-color: var(--btnhover);
-  color: white;
-}
-
 .status-read {
   background-color: var(--thirdopacity);
 }

@@ -8,6 +8,7 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { CgLaptop } from "react-icons/cg";
 import { sendMessage } from "../../redux/actions/userActions";
+import Button from "../UI/Button";
 
 const contactSchema = Yup.object().shape({
   email: Yup.string().email("It is not an email").required("Required"),
@@ -105,9 +106,9 @@ const Contact = () => {
                   ) : null}
                 </div>
               </div>
-              <button className="contact_submit-btn" type="submit">
+              <Button className="contact_submit-btn" type="submit">
                 Send message
-              </button>
+              </Button>
             </Form>
           )}
         </Formik>

@@ -165,19 +165,6 @@
 }
 
 .order_cancel-btn {
-  background-color: transparent;
-  padding: 10px 10px;
-  border: 2px solid black;
-  cursor: pointer;
-  color: black;
-  transition: 200ms;
-}
-
-.order_cancel-btn:hover {
-  border-color: transparent;
-  background-color: var(--danger);
-  color: white;
-  transition: 300ms;
 }
 
 .status-prepearing {
@@ -212,7 +199,7 @@
   }
 
   .order_item-container {
-    grid-template-columns: minmax(200px, 1fr) minmax(50px, 130px);
+    grid-template-columns: minmax(200px, 1fr) minmax(50px, 180px);
     grid-template-rows: 80px 1fr 140px;
     font-size: 14px;
   }

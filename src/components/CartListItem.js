@@ -4,6 +4,7 @@ import { createGlobalStyle } from "styled-components";
 import { changeQuantity, removeItem } from "../redux/store";
 import { HiOutlinePlus, HiOutlineMinus } from "react-icons/hi";
 import { IconContext } from "react-icons/lib";
+import Button from "./UI/Button";
 
 const CartListItem = ({ product }) => {
   const dispatch = useDispatch();
@@ -64,12 +65,14 @@ const CartListItem = ({ product }) => {
           </div>
         </div>
         <div className="cart_item-remove">
-          <button
+          <Button
+            width="70px"
+            danger
             className="cart_item-close-btn"
             onClick={() => removeItemHandler(product.item._id)}
           >
             Remove
-          </button>
+          </Button>
         </div>
         <div className="cart_item-price">
           <h3 className="cart-item-priceTotal">

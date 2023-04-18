@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../styles/mainPage.css";
 import Contact from "../components/Profile/Contact";
 import { useGetProductOfTheWeekQuery } from "../redux/store";
+import Button from "../components/UI/Button";
 
 const MainPage = () => {
   const { data, error, isFetching, isSuccess } = useGetProductOfTheWeekQuery();
@@ -18,12 +19,14 @@ const MainPage = () => {
             className="main-page-banner-img"
           />
           <h1 className="main-page-title-product">Product of the week</h1>
-          <Link
-            to={`/products/${data._id}`}
+          <Button
+            isLink
+            linkDirection={`/products/${data._id}`}
             className="main-page_banner-link-product"
+            padding={"0 30px"}
           >
             Buy now
-          </Link>
+          </Button>
         </div>
       ) : isFetching ? (
         <div className="main-page-banner">
@@ -32,9 +35,13 @@ const MainPage = () => {
       ) : (
         <div className="main-page-banner">
           <h1 className="main-page-title">We are open!!!</h1>
-          <Link to="/products" className="main-page_banner-link">
+          <Button
+            linkDirection="/products"
+            padding={"0 30px"}
+            className="main-page_banner-link"
+          >
             Go to products
-          </Link>
+          </Button>
         </div>
       )}
 

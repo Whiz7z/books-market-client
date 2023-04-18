@@ -41,38 +41,6 @@
   column-gap: 15px;
 }
 
-.confirm_goback-btn {
-  width: 140px;
-  background-color: transparent;
-  cursor: pointer;
-  border: 2px solid black;
-  height: 40px;
-  transition: 200ms;
-}
-
-.confirm_confirm-btn {
-  width: 140px;
-  background-color: transparent;
-  cursor: pointer;
-  border: 2px solid black;
-  height: 40px;
-  transition: 200ms;
-}
-
-.confirm_goback-btn:hover {
-  background-color: var(--danger);
-  border-color: transparent;
-  color: white;
-  transition: 300ms;
-}
-
-.confirm_confirm-btn:hover {
-  background-color: var(--btnhover);
-  border-color: transparent;
-  color: white;
-  transition: 300ms;
-}
-
 @media only screen and (max-width: 860px) {
   .confirm_delete_form-container {
     width: 400px;

@@ -7,8 +7,8 @@ import {
   useGetCategoriesAndPreviewQuery,
 } from "../redux/store";
 import { createGlobalStyle } from "styled-components";
-
 import { useSelectedTags } from "./zustand/store";
+import Button from "./UI/Button";
 
 const ProductsList = ({ products, searchByCategory, clearSearch }) => {
   const location = useLocation();
@@ -44,9 +44,14 @@ const ProductsList = ({ products, searchByCategory, clearSearch }) => {
     <>
       <div className="products-content">
         <h2 className="products-title">Products</h2>
-        <button onClick={goBackHandler} className="products_goback-btn">
+        <Button
+          danger
+          padding="0 10px"
+          onClick={goBackHandler}
+          className="products_goback-btn"
+        >
           Back to collections
-        </button>
+        </Button>
         {!searchByCategory && products && products.length > 0 ? (
           <div className="product_list-container">
             {products.map((product) => (
@@ -65,12 +70,14 @@ const ProductsList = ({ products, searchByCategory, clearSearch }) => {
                   {product.description}
                 </p>
                 <div className="product-add-to-cart">
-                  <button
+                  <Button
+                    height="40px"
+                    padding="0 10px"
                     className="addtocart-btn"
-                    onClick={() => addToCartHandler(product)}
+                    onClick={(e) => addToCartHandler(e, product)}
                   >
                     Add to cart
-                  </button>
+                  </Button>
                   <span className="product_item-price">${product.price}</span>
                 </div>
               </div>
@@ -94,12 +101,14 @@ const ProductsList = ({ products, searchByCategory, clearSearch }) => {
                   {product.description}
                 </p>
                 <div className="product-add-to-cart">
-                  <button
+                  <Button
+                    height="40px"
+                    padding="0 10px"
                     className="addtocart-btn"
                     onClick={(e) => addToCartHandler(e, product)}
                   >
                     Add to cart
-                  </button>
+                  </Button>
                   <span className="product_item-price">${product.price}</span>
                 </div>
               </div>

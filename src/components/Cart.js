@@ -6,6 +6,7 @@ import "../styles/cart.css";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { createOrder } from "../redux/store";
+import Button from "./UI/Button";
 
 const Cart = () => {
   const { cart, user } = useSelector((state) => state);
@@ -26,23 +27,25 @@ const Cart = () => {
       <h2 className="cart-main-title">Cart</h2>
       <CartList />
       <div className="cart_checkout-content">
-        <button
+        <Button
+          danger
           className="cart-remove-all-btn"
           onClick={() => removeAllItemsHandler()}
         >
           Remove All
-        </button>
+        </Button>
         <p className="cart-total-cost">
           Total -{" "}
           <span className="cart-total-cost-span">${cart.totalCost}</span>
         </p>
-        <Link
-          to="/checkout"
+        <Button
+          isLink
+          linkDirection="/checkout"
           className="cart-checkout-btn-link"
           onClick={() => checkoutHandler(cart.items, user.userInfo)}
         >
           Checkout
-        </Link>
+        </Button>
       </div>
     </>
   );

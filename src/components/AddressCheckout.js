@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { setAddress } from "../redux/store";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Button from "./UI/Button";
 
 const SingInSchema = Yup.object().shape({
   country: Yup.string().required("Required"),
@@ -78,17 +79,19 @@ const AddressCheckout = () => {
 
             <div className="login_form-buttons">
               <Link to="/cart">
-                <button
+                <Button
+                  width="200px"
+                  danger
                   as={Link}
                   type="button"
                   className="login_form-btn login_form-btn-back"
                 >
                   Back to cart
-                </button>
+                </Button>
               </Link>
-              <button type="submit" className="login_form-btn">
+              <Button width="200px" type="submit" className="login_form-btn">
                 Move to payment
-              </button>
+              </Button>
             </div>
           </Form>
         )}
