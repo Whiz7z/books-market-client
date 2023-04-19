@@ -66,7 +66,6 @@ const CartListItem = ({ product }) => {
         </div>
         <div className="cart_item-remove">
           <Button
-            width="70px"
             danger
             className="cart_item-close-btn"
             onClick={() => removeItemHandler(product.item._id)}

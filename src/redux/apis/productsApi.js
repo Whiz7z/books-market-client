@@ -72,10 +72,31 @@ const productsApi = createApi({
         },
       }),
       getAllTags: builder.query({
+        providesTags: (result, error) => {
+          return [
+            { type: "Product Updated" },
+            { type: "Product Created" },
+            { type: "Tags Updated" },
+          ];
+        },
         query: () => {
           return {
             url: "/api/tags",
             method: "GET",
+          };
+        },
+      }),
+      deleteChoosenTags: builder.mutation({
+        invalidatesTags: (result, error) => {
+          return [{ type: "Tags Updated" }];
+        },
+        query: (tags) => {
+          return {
+            url: "/api/tags/delete/",
+            method: "PUT",
+            body: {
+              tags: tags,
+            },
           };
         },
       }),
@@ -165,5 +186,6 @@ export const {
   useSetProductOnTheBannerMutation,
   useRemoveProductFromTheBannerMutation,
   useGetProductOfTheWeekQuery,
+  useDeleteChoosenTagsMutation,
 } = productsApi;
 export { productsApi };

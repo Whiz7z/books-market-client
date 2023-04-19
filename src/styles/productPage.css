@@ -12,6 +12,7 @@
 }
 
 .go-back-btn {
+  width: 140px;
   grid-column: 2/3;
   justify-self: start;
   margin-top: 20px;
@@ -88,7 +89,7 @@
 .product_page-btn {
   justify-self: start;
   text-align: center;
-
+  width: 140px;
   margin-top: 20px;
 }
 

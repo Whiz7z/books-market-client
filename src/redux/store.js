@@ -42,6 +42,7 @@ export {
   useSetProductOnTheBannerMutation,
   useRemoveProductFromTheBannerMutation,
   useGetProductOfTheWeekQuery,
+  useDeleteChoosenTagsMutation,
 } from "./apis/productsApi";
 
 export {

@@ -23,7 +23,6 @@ const AdminMessageItem = ({ message, statusChanged }) => {
       <div className="message_status-container">
         <p className="message_status">{message.isRead ? "Read" : "Unread"}</p>
         <Button
-          width="140px"
           className="message_change_status-btn"
           onClick={() => changeReadStatus(message._id)}
         >

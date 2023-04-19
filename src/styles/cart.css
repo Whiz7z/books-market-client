@@ -19,6 +19,7 @@
 }
 
 .cart-remove-all-btn {
+  width: 140px;
   justify-self: center;
 }
 
@@ -39,6 +40,7 @@
 } */
 
 .cart-checkout-btn-link {
+  width: 140px;
   justify-self: center;
 }
 
@@ -138,6 +140,7 @@
 }
 
 .cart_item-close-btn {
+  width: 70px;
   justify-self: end;
   font-weight: light;
 }

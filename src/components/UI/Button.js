@@ -5,7 +5,6 @@ const Button = ({
   danger,
   normal,
   children,
-  width,
   height,
   isLink,
   linkDirection,
@@ -15,7 +14,6 @@ const Button = ({
   ...buttonProps
 }) => {
   let styles = {
-    width: !width && !padding ? "150px" : width,
     height: !height ? "40px" : height,
     border: "2px solid black",
     lineHeight: "37px",
@@ -23,7 +21,6 @@ const Button = ({
     backgroundColor: "transparent",
     cursor: "pointer",
     padding: padding,
-    fontSize: "14px",
     textAlign: "center",
   };
   let hoverStyles;

@@ -5,10 +5,13 @@ import {
   useGetAllProductsQuery,
   useGetAllTagsQuery,
   useLazyGetProductsByTagsQuery,
+  useDeleteChoosenTagsMutation,
 } from "../../redux/store";
 import Button from "../UI/Button";
 import { Link } from "react-router-dom";
 import { useSelectedTags } from "../zustand/store";
+import ProductModal from "../ProductModal";
+import AdminConfirmDeleteTags from "./AdminConfirmDeleteTags";
 
 const selected = "#eab839";
 
@@ -16,6 +19,8 @@ const TagsSeTagsAdminSearchBar = ({ onSearch, onClearSearch }) => {
   const tagRef = useRef();
   const dispatch = useDispatch();
   const { data, error, isFetching } = useGetAllProductsQuery("all");
+  const [deleteTags, result] = useDeleteChoosenTagsMutation();
+  const [deleteTagsModal, setDeleteTagsModal] = useState(false);
 
   const {
     data: tagsData,
@@ -56,6 +61,14 @@ const TagsSeTagsAdminSearchBar = ({ onSearch, onClearSearch }) => {
     resetTags();
 
     onClearSearch();
+  };
+
+  const openDeleteTagsModal = () => {
+    if (tags.length && tags.length > 0) setDeleteTagsModal(true);
+  };
+
+  const closeDeleteTagsModal = () => {
+    setDeleteTagsModal(false);
   };
 
   return (
@@ -112,6 +125,14 @@ const TagsSeTagsAdminSearchBar = ({ onSearch, onClearSearch }) => {
         >
           Clear
         </Button>
+        <Button
+          danger
+          fontSize={"11px"}
+          className="categories_delete_choosen_tags-btn"
+          onClick={() => openDeleteTagsModal()}
+        >
+          Delete choosen tags completely
+        </Button>
       </div>
 
       <h2 className="categories-title">Find by category</h2>
@@ -146,6 +167,14 @@ const TagsSeTagsAdminSearchBar = ({ onSearch, onClearSearch }) => {
               </div>
             );
           })}
+        {deleteTagsModal && (
+          <ProductModal wrapperId={"editProductModal"}>
+            <AdminConfirmDeleteTags
+              tags={tags}
+              onCloseModal={() => closeDeleteTagsModal()}
+            ></AdminConfirmDeleteTags>
+          </ProductModal>
+        )}
       </div>
     </>
   );

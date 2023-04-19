@@ -74,6 +74,9 @@
   text-align: center;
   margin-bottom: 10px;
 }
+.message_change_status-btn {
+  width: 120px;
+}
 
 .status-read {
   background-color: var(--thirdopacity);

@@ -27,7 +27,7 @@
 
 .products-admin-wrapper {
   display: grid;
-  grid-template-columns: 280px 5fr;
+  grid-template-columns: 320px 5fr;
 }
 
 .admin_products-title {
@@ -42,7 +42,7 @@
   align-self: start;
   border: 2px solid black;
   position: sticky;
-  width: 250px;
+  width: 290px;
   top: 5%;
   margin-top: 20px;
   padding: 0 0 40px 0;
@@ -59,6 +59,14 @@
   column-gap: 10px;
   row-gap: 5px;
 }
+
+.categories_delete_choosen_tags-btn {
+  justify-self: center;
+  font-size: 11px;
+  width: 220px;
+  margin-top: 20px;
+}
+
 .categories-title {
   margin-top: 15px;
   width: 100%;
@@ -147,15 +155,12 @@
 }
 
 .admin_product_set-on-banner-btn {
-  font-size: 12px;
+  width: 260px;
   margin-bottom: 20px;
 }
 
-.admin-set-on-banner:hover {
-  background-color: var(--btnhover);
-  color: white;
-  transition: 300ms;
-  border-color: transparent;
+.admin-set-on-banner {
+  width: 260px;
 }
 
 .admin-remove-from-banner:hover {
@@ -214,6 +219,7 @@
 }
 
 .admin_add_new_product-btn {
+  width: 160px;
   margin-right: 100px;
   margin-top: 60px;
   margin-bottom: 30px;
@@ -334,5 +340,15 @@
   .admin_product_list-item {
     font-size: 14px;
     width: 260px;
+  }
+
+  .admin_product_set-on-banner-btn {
+    font-size: 12px;
+    width: 220px;
+  }
+
+  .admin-set-on-banner {
+    font-size: 12px;
+    width: 220px;
   }
 }

@@ -41,13 +41,13 @@
 
 .login_form-btn {
   justify-self: center;
-
-  justify-self: center;
+  width: 200px;
 }
 
 .login_btn-switch {
   text-align: center;
-
+  font-size: 14px;
+  width: 200px;
   justify-self: center;
 }
 

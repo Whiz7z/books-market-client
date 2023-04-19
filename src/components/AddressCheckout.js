@@ -80,7 +80,6 @@ const AddressCheckout = () => {
             <div className="login_form-buttons">
               <Link to="/cart">
                 <Button
-                  width="200px"
                   danger
                   as={Link}
                   type="button"
@@ -89,7 +88,7 @@ const AddressCheckout = () => {
                   Back to cart
                 </Button>
               </Link>
-              <Button width="200px" type="submit" className="login_form-btn">
+              <Button type="submit" className="login_form-btn">
                 Move to payment
               </Button>
             </div>

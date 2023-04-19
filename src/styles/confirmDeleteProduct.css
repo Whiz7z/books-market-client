@@ -32,6 +32,13 @@
   margin-bottom: 15px;
 }
 
+.confirm_delete_form-paragraph {
+  margin-top: 30px;
+  justify-self: center;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
 .confirm_delete-buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -41,13 +48,28 @@
   column-gap: 15px;
 }
 
+.confirm_confirm-btn {
+  width: 140px;
+}
+
+.confirm_goback-btn {
+  width: 140px;
+}
+
 @media only screen and (max-width: 860px) {
   .confirm_delete_form-container {
     width: 400px;
+    max-width: none;
   }
 
   .confirm_delete_form-title {
     text-align: center;
+    font-size: 16px;
+  }
+
+  .confirm_delete_form-paragraph {
+    text-align: center;
+    font-size: 14px;
   }
 }
 

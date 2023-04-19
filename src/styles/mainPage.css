@@ -40,6 +40,7 @@
 }
 
 .main-page_banner-link-product {
+  width: 140px;
   justify-self: center;
   align-self: flex-start;
   grid-column: 1/3;
