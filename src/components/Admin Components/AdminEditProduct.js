@@ -185,7 +185,7 @@ const AdminEditProduct = ({ product, onCloseModal }) => {
                           style={
                             product.tags.find((el) => el === tag)
                               ? { backgroundColor: "#eab839" }
-                              : { backgroundColor: "#083d77" }
+                              : { backgroundColor: "#6a603c" }
                           }
                           onClick={(e) => {
                             if (
@@ -197,7 +197,7 @@ const AdminEditProduct = ({ product, onCloseModal }) => {
                                 setTagsSelected((prev) =>
                                   prev.filter((el) => el !== tag)
                                 );
-                                e.target.style.backgroundColor = "#083d77";
+                                e.target.style.backgroundColor = "#6a603c";
                               }
                             } else {
                               setTagsSelected((prev) => [...prev, tag]);

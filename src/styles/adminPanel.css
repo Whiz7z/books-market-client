@@ -266,7 +266,7 @@
   line-height: 38px;
   text-align: center;
   background-color: transparent;
-  border: 2px dashed black;
+  border: 2px solid black;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -333,6 +333,11 @@
 
   .edit-field {
     font-size: 14px;
+  }
+  .admin_add_new_product-btn {
+    justify-self: center;
+    margin: 40px 0;
+    margin-right: 0;
   }
 }
 

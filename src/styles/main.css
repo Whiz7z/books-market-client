@@ -282,6 +282,7 @@ button::-moz-focus-inner {
 .categories_clear_tags-btn {
   justify-self: center;
   margin-top: 20px;
+  font-size: 14px;
   width: 140px;
   text-align: center;
 }

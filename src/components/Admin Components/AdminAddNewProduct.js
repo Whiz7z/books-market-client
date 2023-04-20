@@ -222,7 +222,7 @@ const AdminAddNewProduct = ({ onCloseModal }) => {
                               setTagsSelected((prev) =>
                                 prev.filter((el) => el !== tag)
                               );
-                              e.target.style.backgroundColor = "#083d77";
+                              e.target.style.backgroundColor = "#6a603c";
                             }
                           } else {
                             setTagsSelected((prev) => [...prev, tag]);
