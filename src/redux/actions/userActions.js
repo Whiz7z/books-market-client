@@ -36,6 +36,39 @@ export const login =
     }
   };
 
+export const demoLogin = (role) => async (dispatch) => {
+  dispatch(setLoading(true));
+
+  try {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const response = await axios.post(
+      `${process.env.REACT_APP_BACKEND_URL}/api/users/demoLogin`,
+      { role },
+      config
+    );
+
+    if (response.status > 400) {
+      console.log(response);
+    }
+    dispatch(userLogin(response.data));
+    localStorage.setItem("userInfo", JSON.stringify(response.data));
+  } catch (error) {
+    dispatch(
+      setError(
+        error.response && error.response.data
+          ? error.response.data
+          : error.message
+          ? error.message
+          : "An unexpected error has occured. Please try again later."
+      )
+    );
+  }
+};
+
 export const register =
   ({ email, password, name }) =>
   async (dispatch) => {

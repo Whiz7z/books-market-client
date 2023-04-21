@@ -84,6 +84,18 @@
   column-gap: 15px;
 }
 
+.login_form-buttons-demo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-self: center;
+  margin-top: 10px;
+  column-gap: 15px;
+}
+
+.login_form-demo-title {
+  text-align: center;
+}
+
 .login_form-one_button {
   justify-self: center;
   margin-top: 40px;
@@ -137,6 +149,15 @@
     justify-items: center;
   }
 
+  .login_form-buttons-demo {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-self: center;
+    width: 400px;
+    row-gap: 25px;
+    justify-items: center;
+  }
+
   .login_form-buttons {
     justify-items: center;
   }
@@ -144,6 +165,10 @@
 
 @media only screen and (max-width: 480px) {
   .login_form-buttons {
+    width: 300px;
+  }
+
+  .login_form-buttons-demo {
     width: 300px;
   }
 
@@ -163,6 +188,10 @@
 
 @media only screen and (max-width: 400px) {
   .login_form-buttons {
+    width: 200px;
+  }
+
+  .login_form-buttons-demo {
     width: 200px;
   }
 }
