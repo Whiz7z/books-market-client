@@ -37,7 +37,7 @@ const AdminOrderItem = ({ order, onStatusChange }) => {
         <p>{`Id - ${order.user._id}`}</p>
       </div>
       <div className="order-total-price">
-        <p>${order.totalPrice.toFixed(2)}</p>
+        <p>£{order.totalPrice.toFixed(2)}</p>
       </div>
       <div className="order_change_status-container">
         <p>{order.status}</p>

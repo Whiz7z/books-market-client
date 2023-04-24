@@ -29,7 +29,7 @@ const CartListItem = ({ product }) => {
           <div className="cart_item-info">
             <h3>{product.item.title}</h3>
             <p className="cart_item_info-price">
-              Price - ${product.item.price.toFixed(2)}
+              Price - £{product.item.price.toFixed(2)}
             </p>
           </div>
         </div>
@@ -75,7 +75,7 @@ const CartListItem = ({ product }) => {
         </div>
         <div className="cart_item-price">
           <h3 className="cart-item-priceTotal">
-            ${(product.item.price * product.quantity).toFixed(2)}
+            £{(product.item.price * product.quantity).toFixed(2)}
           </h3>
         </div>
       </div>

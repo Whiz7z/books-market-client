@@ -60,7 +60,7 @@ const AdminProductItem = ({ product }) => {
         Category - {product.category}
       </p>
       <p className="admin_product_item-stock">Stock - {product.stock}</p>
-      <p className="admin_product_item-price">Price - ${product.price}</p>
+      <p className="admin_product_item-price">Price - £{product.price}</p>
       <div className="admin_product-buttons">
         <Button
           danger

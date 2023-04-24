@@ -78,7 +78,7 @@ const ProductsList = ({ products, searchByCategory, clearSearch }) => {
                   >
                     Add to cart
                   </Button>
-                  <span className="product_item-price">${product.price}</span>
+                  <span className="product_item-price">£{product.price}</span>
                 </div>
               </div>
             ))}
@@ -109,7 +109,7 @@ const ProductsList = ({ products, searchByCategory, clearSearch }) => {
                   >
                     Add to cart
                   </Button>
-                  <span className="product_item-price">${product.price}</span>
+                  <span className="product_item-price">£{product.price}</span>
                 </div>
               </div>
             ))}

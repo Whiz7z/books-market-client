@@ -36,7 +36,7 @@ const Cart = () => {
         </Button>
         <p className="cart-total-cost">
           Total -{" "}
-          <span className="cart-total-cost-span">${cart.totalCost}</span>
+          <span className="cart-total-cost-span">£{cart.totalCost}</span>
         </p>
         <Button
           isLink

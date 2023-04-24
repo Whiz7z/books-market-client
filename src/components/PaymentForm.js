@@ -10,6 +10,7 @@ import "../styles/payment.css";
 import { createOrder } from "../redux/actions/orderActions";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Button from "./UI/Button";
 
 import {
   removeAllItems,
@@ -103,7 +104,10 @@ export default function PaymentForm({ totalPrice }) {
 
   return (
     <div className="pay-form">
-      <h2 className="price-title">You are paying - ${totalPrice}</h2>
+      <h2 className="price-title">You are paying - £{totalPrice}</h2>
+      <p className="price-title-paragraph-demo">
+        (Write 4242 4242 4242 4242 everywhere for demo pay)
+      </p>
       <form id="payment-form" onSubmit={handleSubmit}>
         <PaymentElement id="payment-element" options={paymentElementOptions} />
         <button disabled={isLoading || !stripe || !elements} id="submit">
@@ -118,6 +122,14 @@ export default function PaymentForm({ totalPrice }) {
         {/* Show any error or success messages */}
         {message && <div id="payment-message">{message}</div>}
       </form>
+      <Button
+        danger
+        isLink
+        linkDirection="/checkout"
+        className="payment_go_back-btn"
+      >
+        Go back
+      </Button>
     </div>
   );
 }

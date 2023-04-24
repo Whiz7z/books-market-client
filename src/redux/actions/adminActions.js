@@ -26,13 +26,6 @@ export const updateProduct = (product, token) => async (dispatch) => {
 
 export const getAllTags = async (token) => {
   try {
-    // const config = {
-    //   headers: {
-    //     authorization: `Bearer ${token}`,
-    //     "Content-Type": "application/json",
-    //   },
-    // };
-
     const response = await axios.get(
       `${process.env.REACT_APP_BACKEND_URL}/api/tags/`
     );

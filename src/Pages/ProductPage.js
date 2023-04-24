@@ -67,7 +67,7 @@ const ProductPage = () => {
             </div>
           </div>
           <div className="product_add-to-cart">
-            <h4 className="product_add-to-cart-price">${product.price}</h4>
+            <h4 className="product_add-to-cart-price">£{product.price}</h4>
             <Button
               className="product_page-btn"
               onClick={() => addToCartHandler(product)}
